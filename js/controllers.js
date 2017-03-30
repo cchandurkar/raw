@@ -390,6 +390,9 @@ angular.module('raw.controllers', [])
         pivotable($scope.data);
         $scope.parsed = true;
 
+        // Once data is reloaded, re-initialize the trail
+        console.log("Clearing Provenance Data");
+        $scope.trail.clearProvenanceData().init( $scope.data );
 
       } catch(e){
         $scope.data = [];

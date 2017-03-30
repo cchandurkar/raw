@@ -1257,3 +1257,10 @@ pre.CodeMirror-placeholder {
 @media (min-width: @screen-lg-min) {
 
 }
+#provenance-controls .trails-control-box-container{
+  margin-top: 100px;
+  margin-right: 50px;
+}
+
+
+/** Provenance Settings **/

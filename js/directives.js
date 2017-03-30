@@ -741,4 +741,18 @@ angular.module('raw.directives', [])
 
     }
   };
+})
+
+.directive('provenance', function( provenanceService ){
+	return {
+		restrict: 'EA',
+		template: '<div id="provenance-controls"></div>',
+		link: function( scope, element, attrs ){
+
+			// Create Provenance Trail in Scope
+			console.log( "Initializing Trail", provenanceService );
+            scope.trail = provenanceService.create();
+
+		}
+	}
 });

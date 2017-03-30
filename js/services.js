@@ -2,9 +2,9 @@
 
 /* Services */
 
-angular.module('raw.services', [])
+var services = angular.module('raw.services', []);
 
-	.factory('dataService', function ($http, $q, $timeout) {
+	services.factory('dataService', function ($http, $q, $timeout) {
 
 		  return {
 
@@ -152,4 +152,25 @@ angular.module('raw.services', [])
 			  }
 
 	  	}
-	})
+	});
+
+	services.factory('provenanceService', function($http){
+		return {
+
+			// Create Provenance
+			create: function(){
+
+                // Create Trail
+                var trail =  SIMProv.UITrail()
+                    .attr('viz', 'myViz')
+                    .addControls()
+                    .renderTo('#provenance-controls')
+                    .init( { } );
+
+                // Return trail
+				return trail;
+
+			}
+
+		};
+	});
